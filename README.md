@@ -378,3 +378,17 @@ faster-whisper-env
 
     :-: main --> 137.2445514202118 sec
     ```
+
+## 4. Models
+```
+tiny.en
+tiny
+base.en
+base
+small.en
+small
+medium.en
+medium
+large-v1
+large-v2
+```
