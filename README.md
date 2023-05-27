@@ -23,7 +23,7 @@ faster-whisper-env
 ```
 
 ## 3. Test
-- 28m59s mp4 test, Large-V2, RTX3070 (RAM:8GB)
+- 28m59s mp4 test, Large-V2 beam_size=5, RTX3070 (RAM:8GB)
     ```
     python test.py
     ```
