@@ -2,7 +2,7 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "Python: 現在のファイル",
+            "name": "transcribe",
             "type": "python",
             "request": "launch",
             "program": "${file}",
@@ -10,6 +10,17 @@
             "justMyCode": true,
             "args": [
                 "--mode", "mic",
+                "--model_size", "large-v2",
+            ]
+        },
+        {
+            "name": "transcribe_realtime",
+            "type": "python",
+            "request": "launch",
+            "program": "${file}",
+            "console": "integratedTerminal",
+            "justMyCode": true,
+            "args": [
                 "--model_size", "large-v2",
             ]
         }
