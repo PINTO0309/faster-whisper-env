@@ -29,26 +29,13 @@ faster-whisper-env
 ## 3. Test
 - Usage
     ```
-    usage: transcribe.py
-        [-h] [-m {audio,mic}]
-        [-a [AUDIOS ...]]
-        [-o OUTPUT_DIR]
+    usage: transcribe_realtime.py
         [-s {tiny.en,tiny,base.en,base,small.en,small,medium.en,medium,large-v1,large-v2}]
         [-p {float16,int8_float16,int8}]
 
     options:
       -h, --help
         show this help message and exit
-
-      -m {audio,mic}, --mode {audio,mic}
-        Audio file(audio) or Microphone(mic)
-
-      -a [AUDIOS ...], --audios [AUDIOS ...]
-        Specify the path to at least one or more audio files (mp4, mp3, etc.).
-        e.g. --audio aaa.mp4 bbb.mp3 ccc.mp4
-
-      -o OUTPUT_DIR, --output_dir OUTPUT_DIR
-        Destination directory for transcribed text.
 
       -s {tiny.en,tiny,base.en,base,small.en,small,medium.en,medium,large-v1,large-v2}, \
         --model_size {tiny.en,tiny,base.en,base,small.en,small,medium.en,medium,large-v1,large-v2}
@@ -59,7 +46,7 @@ faster-whisper-env
     ```
 - Microphone
     ```bash
-    python transcribe.py --mode mic --model_size large-v2
+    python transcribe_realtime.py --model_size large-v2
     ```
     ```
     Input Device ID 0, - HDA Intel PCH: ALC892 Analog (hw:0,0)
@@ -70,9 +57,9 @@ faster-whisper-env
     Input Device ID 23, - default
     Please input your microphone Device ID: 10
 
-    Speak now! (CTRL + C to exit the application)
+    Speak now!
     ```
-    https://github.com/PINTO0309/faster-whisper-env/assets/33194443/6869adde-24b6-4c51-8b3c-36734fedb742
+    https://github.com/PINTO0309/faster-whisper-env/assets/33194443/bd150529-6c64-4d96-949e-630f93da3c3e
 
 - 28m59s mp4 test, Large-V2 beam_size=5, RTX3070 (RAM:8GB)
     ```bash
