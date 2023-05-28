@@ -27,6 +27,18 @@ faster-whisper-env
     ```bash
     python transcribe.py --mode mic --model_size large-v2
     ```
+    ```
+    Input Device ID 0, - HDA Intel PCH: ALC892 Analog (hw:0,0)
+    Input Device ID 2, - HDA Intel PCH: ALC892 Alt Analog (hw:0,2)
+    Input Device ID 10, - EMEET OfficeCore M3: USB Audio (hw:2,0)
+    Input Device ID 11, - SteelSeries Arctis 7: USB Audio (hw:3,0)
+    Input Device ID 13, - sysdefault
+    Input Device ID 23, - default
+    Please input your microphone Device ID: 10
+
+    Speak now! (CTRL + C to exit the application)
+    ```
+
 - 28m59s mp4 test, Large-V2 beam_size=5, RTX3070 (RAM:8GB)
     ```bash
     python test.py
