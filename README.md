@@ -32,6 +32,7 @@ faster-whisper-env
     usage: transcribe_realtime.py
         [-s {tiny.en,tiny,base.en,base,small.en,small,medium.en,medium,large-v1,large-v2}]
         [-p {float16,int8_float16,int8}]
+        [-l {en,zh,de,es,ru,ko, ...}]
 
     options:
       -h, --help
@@ -41,12 +42,15 @@ faster-whisper-env
         --model_size {tiny.en,tiny,base.en,base,small.en,small,medium.en,medium,large-v1,large-v2}
         Model size.
 
+      -l {en,zh,de,es,ru,ko, ...}, --language {en,zh,de,es,ru,ko, ...}
+        Language.
+
       -p {float16,int8_float16,int8}, --precision {float16,int8_float16,int8}
         Precision.
     ```
 - Microphone
     ```bash
-    python transcribe_realtime.py --model_size large-v2
+    python transcribe_realtime.py --model_size large-v2 --language ja
     ```
     ```
     Input Device ID 0, - HDA Intel PCH: ALC892 Analog (hw:0,0)

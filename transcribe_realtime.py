@@ -88,8 +88,9 @@ class VadWrapper:
 
 ### Cited: https://github.com/reriiasu/speech-to-text
 class WhisperModelWrapper:
-    def __init__(self, model_size="large-v2", precision="int8_float16"):
+    def __init__(self, model_size="large-v2", precision="int8_float16", language="ja"):
         self.model_size_or_path = model_size
+        self.language = language
         if precision == "float16":
             # Run on GPU with FP16
             self.model = WhisperModel(
@@ -108,14 +109,14 @@ class WhisperModelWrapper:
 
     def transcribe(self, audio):
         segments, _ = self.model.transcribe(
-            audio=audio, beam_size=5, language="ja", without_timestamps=True
+            audio=audio, beam_size=5, language=self.language, without_timestamps=True
         )
         return segments
 
 ### Cited: https://github.com/reriiasu/speech-to-text
 class AudioTranscriber:
-    def __init__(self, model_size="large-v2", precision="int8_float16"):
-        self.model_wrapper = WhisperModelWrapper(model_size=model_size, precision=precision)
+    def __init__(self, model_size="large-v2", precision="int8_float16", language="ja"):
+        self.model_wrapper = WhisperModelWrapper(model_size=model_size, precision=precision, language=language)
         self.vad_wrapper = VadWrapper()
         self.silent_chunks = 0
         self.speech_buffer = []
@@ -208,10 +209,119 @@ def main():
         ],
         help="Precision.",
     )
+    parser.add_argument(
+        "-l",
+        "--language",
+        type=str,
+        default="ja",
+        choices=[
+            "en",
+            "zh",
+            "de",
+            "es",
+            "ru",
+            "ko",
+            "fr",
+            "ja",
+            "pt",
+            "tr",
+            "pl",
+            "ca",
+            "nl",
+            "ar",
+            "sv",
+            "it",
+            "id",
+            "hi",
+            "fi",
+            "vi",
+            "iw",
+            "uk",
+            "el",
+            "ms",
+            "cs",
+            "ro",
+            "da",
+            "hu",
+            "ta",
+            "no",
+            "th",
+            "ur",
+            "hr",
+            "bg",
+            "lt",
+            "la",
+            "mi",
+            "ml",
+            "cy",
+            "sk",
+            "te",
+            "fa",
+            "lv",
+            "bn",
+            "sr",
+            "az",
+            "sl",
+            "kn",
+            "et",
+            "mk",
+            "br",
+            "eu",
+            "is",
+            "hy",
+            "ne",
+            "mn",
+            "bs",
+            "kk",
+            "sq",
+            "sw",
+            "gl",
+            "mr",
+            "pa",
+            "si",
+            "km",
+            "sn",
+            "yo",
+            "so",
+            "af",
+            "oc",
+            "ka",
+            "be",
+            "tg",
+            "sd",
+            "gu",
+            "am",
+            "yi",
+            "lo",
+            "uz",
+            "fo",
+            "ht",
+            "ps",
+            "tk",
+            "nn",
+            "mt",
+            "sa",
+            "lb",
+            "my",
+            "bo",
+            "tl",
+            "mg",
+            "as",
+            "tt",
+            "haw",
+            "ln",
+            "ha",
+            "ba",
+            "jw",
+            "su",
+        ],
+        help="Precision.",
+    )
     args = parser.parse_args()
 
     model_size: str = args.model_size
     precision: str = args.precision
+    language: str = args.language
 
     p = pyaudio.PyAudio()
     info = p.get_host_api_info_by_index(0)
@@ -221,7 +331,7 @@ def main():
         if device_info.get("maxInputChannels") > 0:
             print(f"Input Device ID {i}, - {device_info.get('name')}")
     device_index: int = int(input("Please input your microphone Device ID: "))
-    transcriber = AudioTranscriber(model_size=model_size, precision=precision)
+    transcriber = AudioTranscriber(model_size=model_size, precision=precision, language=language)
     transcriber.start_transcription(device_index)
 
 

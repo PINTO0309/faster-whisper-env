@@ -22,6 +22,7 @@
             "justMyCode": true,
             "args": [
                 "--model_size", "large-v2",
+                "--language", "ja"
             ]
         }
     ]
