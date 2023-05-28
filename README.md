@@ -38,6 +38,7 @@ faster-whisper-env
 
     Speak now! (CTRL + C to exit the application)
     ```
+    https://github.com/PINTO0309/faster-whisper-env/assets/33194443/6869adde-24b6-4c51-8b3c-36734fedb742
 
 - 28m59s mp4 test, Large-V2 beam_size=5, RTX3070 (RAM:8GB)
     ```bash
