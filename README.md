@@ -2,6 +2,7 @@
 An environment where you can try out faster-whisper immediately.
 
 Cited: https://github.com/guillaumekln/faster-whisper
+
 Cited: https://github.com/reriiasu/speech-to-text
 
 ## 1. Docker build
