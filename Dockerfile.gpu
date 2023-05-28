@@ -30,6 +30,7 @@ RUN apt-get update \
     && pip install PyAudio==0.2.13 \
     && pip install webrtcvad==2.0.10 \
     && pip install performance-monitor==0.0.1 \
+    && pip install google-cloud-speech==2.11.0 \
     && apt clean \
     && rm -rf /var/lib/apt/lists/* \
     && rm /etc/apt/apt.conf.d/docker-clean
