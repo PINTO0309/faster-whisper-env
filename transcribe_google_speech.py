@@ -6,7 +6,7 @@ import sys
 from google.cloud import speech
 
 import pyaudio
-from six.moves import queue
+from six.moves import queue # type: ignore
 
 # Audio recording parameters
 RATE = 16000
