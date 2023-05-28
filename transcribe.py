@@ -116,7 +116,7 @@ def main():
             "int8_float16",
             "int8",
         ],
-        help="Model size.",
+        help="Precision.",
     )
     args = parser.parse_args()
 
