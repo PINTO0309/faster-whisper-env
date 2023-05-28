@@ -23,6 +23,36 @@ faster-whisper-env
 ```
 
 ## 3. Test
+- Usage
+    ```
+    usage: transcribe.py
+        [-h] [-m {audio,mic}]
+        [-a [AUDIOS ...]]
+        [-o OUTPUT_DIR]
+        [-s {tiny.en,tiny,base.en,base,small.en,small,medium.en,medium,large-v1,large-v2}]
+        [-p {float16,int8_float16,int8}]
+
+    options:
+      -h, --help
+        show this help message and exit
+
+      -m {audio,mic}, --mode {audio,mic}
+        Audio file(audio) or Microphone(mic)
+
+      -a [AUDIOS ...], --audios [AUDIOS ...]
+        Specify the path to at least one or more audio files (mp4, mp3, etc.).
+        e.g. --audio aaa.mp4 bbb.mp3 ccc.mp4
+
+      -o OUTPUT_DIR, --output_dir OUTPUT_DIR
+        Destination directory for transcribed text.
+
+      -s {tiny.en,tiny,base.en,base,small.en,small,medium.en,medium,large-v1,large-v2}, \
+        --model_size {tiny.en,tiny,base.en,base,small.en,small,medium.en,medium,large-v1,large-v2}
+        Model size.
+
+      -p {float16,int8_float16,int8}, --precision {float16,int8_float16,int8}
+        Precision.
+    ```
 - Microphone
     ```bash
     python transcribe.py --mode mic --model_size large-v2
