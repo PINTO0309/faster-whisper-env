@@ -23,8 +23,12 @@ faster-whisper-env
 ```
 
 ## 3. Test
-- 28m59s mp4 test, Large-V2 beam_size=5, RTX3070 (RAM:8GB)
+- Microphone
+    ```bash
+    python transcribe.py --mode mic --model_size large-v2
     ```
+- 28m59s mp4 test, Large-V2 beam_size=5, RTX3070 (RAM:8GB)
+    ```bash
     python test.py
     ```
     ```
