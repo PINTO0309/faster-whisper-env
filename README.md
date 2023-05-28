@@ -437,3 +437,4 @@ large-v2
 
 ## 5. TODO
 - [ ] I intend to try a trial implementation of a process that greatly increases the number of inferences, successively overwriting `stdout`, and overwriting the entire `stdout` with the final inference result at the break in utterance.
+- [ ] CNN VAD: https://github.com/ina-foss/inaSpeechSegmenter
