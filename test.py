@@ -13,7 +13,7 @@ model = WhisperModel(model_size, device="cuda", compute_type="float16")
 # or run on CPU with INT8
 # model = WhisperModel(model_size, device="cpu", compute_type="int8")
 
-segments, info = model.transcribe("intel_x1.20.mp4", beam_size=5)
+segments, info = model.transcribe("intel_x1.20.mp4", beam_size=5, language='ja')
 print(f"Detected language {info.language} with probability {info.language_probability:.2f}")
 
 @performance_sec
