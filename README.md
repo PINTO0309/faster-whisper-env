@@ -30,7 +30,7 @@ faster-whisper-env
 - Usage
     ```
     usage: transcribe_realtime.py
-        [-s {tiny.en,tiny,base.en,base,small.en,small,medium.en,medium,large-v1,large-v2}]
+        [-s {tiny.en,tiny,base.en,base,small.en,small,medium.en,medium,large-v1,large-v2,large-v3}]
         [-p {float16,int8_float16,int8}]
         [-l {en,zh,de,es,ru,ko, ...}]
 
@@ -38,8 +38,8 @@ faster-whisper-env
       -h, --help
         show this help message and exit
 
-      -s {tiny.en,tiny,base.en,base,small.en,small,medium.en,medium,large-v1,large-v2}, \
-        --model_size {tiny.en,tiny,base.en,base,small.en,small,medium.en,medium,large-v1,large-v2}
+      -s {tiny.en,tiny,base.en,base,small.en,small,medium.en,medium,large-v1,large-v2,large-v3}, \
+        --model_size {tiny.en,tiny,base.en,base,small.en,small,medium.en,medium,large-v1,large-v2,large-v3}
         Model size.
 
       -l {en,zh,de,es,ru,ko, ...}, --language {en,zh,de,es,ru,ko, ...}
