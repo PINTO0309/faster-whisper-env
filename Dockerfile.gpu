@@ -1,4 +1,4 @@
-FROM pinto0309/ubuntu22.04-cuda11.8:latest
+FROM nvidia/cuda:12.2.2-cudnn8-runtime-ubuntu22.04
 ENV DEBIAN_FRONTEND=noninteractive
 ARG USERNAME=user
 ARG OS=ubuntu2204
@@ -23,7 +23,8 @@ RUN apt-get update \
         ffmpeg \
         portaudio19-dev \
     && pip install pip -U \
-    && pip install faster-whisper==v0.6.0 \
+    && pip install faster-whisper==v1.0.3 \
+    && pip install ctranslate2==4.4.0 \
     && pip install ffmpeg-python==0.2.0 \
     && pip install soundfile==0.12.1 \
     && pip install SpeechRecognition==3.10.0 \

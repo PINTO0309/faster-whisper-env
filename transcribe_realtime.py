@@ -126,10 +126,13 @@ class AudioTranscriber:
         with ThreadPoolExecutor() as executor:
             while True:
                 audio_data_np = await asyncio.get_event_loop().run_in_executor(
-                    executor, self.audio_queue.get
+                    executor,
+                    self.audio_queue.get
                 )
                 segments = await asyncio.get_event_loop().run_in_executor(
-                    executor, self.model_wrapper.transcribe, audio_data_np
+                    executor,
+                    self.model_wrapper.transcribe,
+                    audio_data_np,
                 )
 
                 for segment in segments:
